@@ -5,17 +5,29 @@
  */
 package vista;
 
+import controlador.Controlador_FRM_MenuPrincipal;
+
 /**
  *
  * @author JorgeIgnacio
  */
 public class FRM_MenuPrincipal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FRM_MenuPrincipal
-     */
+    //Referencias
+    Controlador_FRM_MenuPrincipal cfrmmp;
+    
     public FRM_MenuPrincipal() {
+        
         initComponents();
+        cfrmmp = new Controlador_FRM_MenuPrincipal();
+        agregarEventos();
+        
+    }
+    
+    public void agregarEventos() {
+        
+        this.jMenuItem_Estudiantes.addActionListener(cfrmmp);
+        
     }
 
     /**
@@ -27,26 +39,26 @@ public class FRM_MenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenuBar_Principal = new javax.swing.JMenuBar();
         jM_Archivo = new javax.swing.JMenu();
         jM_Mantenimiento = new javax.swing.JMenu();
-        jM_Estudiantes = new javax.swing.JMenuItem();
+        jMenuItem_Estudiantes = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jM_Archivo.setText("Archivo");
         jM_Archivo.setActionCommand("Archivo");
-        jMenuBar1.add(jM_Archivo);
+        jMenuBar_Principal.add(jM_Archivo);
 
         jM_Mantenimiento.setText("Mantenimiento");
 
-        jM_Estudiantes.setText("Mantenimiento Estudiantes");
-        jM_Estudiantes.setActionCommand("Estudiantes");
-        jM_Mantenimiento.add(jM_Estudiantes);
+        jMenuItem_Estudiantes.setText("Mantenimiento Estudiantes");
+        jMenuItem_Estudiantes.setActionCommand("Estudiantes");
+        jM_Mantenimiento.add(jMenuItem_Estudiantes);
 
-        jMenuBar1.add(jM_Mantenimiento);
+        jMenuBar_Principal.add(jM_Mantenimiento);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(jMenuBar_Principal);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,8 +111,8 @@ public class FRM_MenuPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jM_Archivo;
-    private javax.swing.JMenuItem jM_Estudiantes;
     private javax.swing.JMenu jM_Mantenimiento;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar_Principal;
+    private javax.swing.JMenuItem jMenuItem_Estudiantes;
     // End of variables declaration//GEN-END:variables
 }

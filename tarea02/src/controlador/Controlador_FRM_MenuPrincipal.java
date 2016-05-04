@@ -7,6 +7,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import vista.FRM_MantenimientoEstudiantes;
 
 /**
  *
@@ -15,13 +16,24 @@ import java.awt.event.ActionListener;
 public class Controlador_FRM_MenuPrincipal implements ActionListener {
     
     //Referencias
+    FRM_MantenimientoEstudiantes frmme;
+    
     //Constructor
     public Controlador_FRM_MenuPrincipal() {
+        
         //Instancias
-    }
+        frmme = new FRM_MantenimientoEstudiantes();
+        
+    }//Fin Constructor
     
     public void actionPerformed(ActionEvent e) {
         
-    }
+        if(e.getActionCommand().equals("Estudiantes")) {
+            
+            frmme.setVisible(true);
+            
+        }
+        
+    }//Fin actionPerformed
     
 }//Fin Controlador_FRM_MenuPrincipal
