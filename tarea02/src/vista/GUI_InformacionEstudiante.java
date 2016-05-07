@@ -17,6 +17,39 @@ public class GUI_InformacionEstudiante extends javax.swing.JPanel {
     public GUI_InformacionEstudiante() {
         initComponents();
     }
+    
+    /*
+    
+    */
+    public String[] obtenerInformacion() {
+        
+        String arregloInformacion[] = new String[3];
+        
+        arregloInformacion[0] = this.jT_Cedula.getText();
+        arregloInformacion[1] = this.jT_Nombre.getText();
+        arregloInformacion[2] = this.jT_Direccion.getText();
+                
+        return arregloInformacion;
+        
+    }//Fin obtenerInformacion
+    
+    /*
+    
+    */
+    public void mostrarInformacion(String arregloInformacion[]) {
+        
+        this.jT_Nombre.setText(arregloInformacion[0]);
+        this.jT_Direccion.setText(arregloInformacion[1]);
+        
+    }//Fin mostrarInformacion
+    
+    public void limpiarCampos() {
+        
+        this.jT_Cedula.setText("");
+        this.jT_Nombre.setText("");
+        this.jT_Direccion.setText("");
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -28,15 +61,15 @@ public class GUI_InformacionEstudiante extends javax.swing.JPanel {
     private void initComponents() {
 
         jL_Nombre = new javax.swing.JLabel();
-        jT_Carne = new javax.swing.JTextField();
+        jT_Cedula = new javax.swing.JTextField();
         jT_Nombre = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        jL_Cedula = new javax.swing.JLabel();
         jT_Direccion = new javax.swing.JTextField();
         jL_Direccion = new javax.swing.JLabel();
 
         jL_Nombre.setText("NOMBRE");
 
-        jLabel1.setText("CARNE");
+        jL_Cedula.setText("CEDULA");
 
         jL_Direccion.setText("DIRECCION");
 
@@ -48,13 +81,13 @@ public class GUI_InformacionEstudiante extends javax.swing.JPanel {
                 .addContainerGap(14, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jL_Direccion, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
+                    .addComponent(jL_Cedula)
                     .addComponent(jL_Nombre))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jT_Nombre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
                     .addComponent(jT_Direccion, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jT_Carne, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jT_Cedula, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -62,8 +95,8 @@ public class GUI_InformacionEstudiante extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jT_Carne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                    .addComponent(jT_Cedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jL_Cedula))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jT_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -78,10 +111,10 @@ public class GUI_InformacionEstudiante extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jL_Cedula;
     private javax.swing.JLabel jL_Direccion;
     private javax.swing.JLabel jL_Nombre;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jT_Carne;
+    private javax.swing.JTextField jT_Cedula;
     private javax.swing.JTextField jT_Direccion;
     private javax.swing.JTextField jT_Nombre;
     // End of variables declaration//GEN-END:variables

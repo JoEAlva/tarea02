@@ -20,14 +20,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="gUI_Botones1" min="-2" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="gUI_InformacionEstudiante1" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="gUI_InformacionCurso2" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="gUI_Botones2" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -36,18 +34,18 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="gUI_InformacionEstudiante1" min="-2" max="-2" attributes="0"/>
+              <Component id="gUI_InformacionCurso2" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="gUI_Botones1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="12" max="32767" attributes="0"/>
+              <Component id="gUI_Botones2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="16" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="vista.GUI_Botones" name="gUI_Botones1">
+    <Component class="vista.GUI_InformacionCurso" name="gUI_InformacionCurso2">
     </Component>
-    <Component class="vista.GUI_InformacionEstudiante" name="gUI_InformacionEstudiante1">
+    <Component class="vista.GUI_Botones" name="gUI_Botones2">
     </Component>
   </SubComponents>
 </Form>

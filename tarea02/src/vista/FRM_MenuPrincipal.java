@@ -6,6 +6,7 @@
 package vista;
 
 import controlador.Controlador_FRM_MenuPrincipal;
+import modelo.MetodosConexionBD;
 
 /**
  *
@@ -26,7 +27,9 @@ public class FRM_MenuPrincipal extends javax.swing.JFrame {
     
     public void agregarEventos() {
         
-        this.jMenuItem_Estudiantes.addActionListener(cfrmmp);
+        this.jMenuItem_Estudiante.addActionListener(cfrmmp);
+        this.jMenuItem_Curso.addActionListener(cfrmmp);
+        this.jMenuItem_Matricula.addActionListener(cfrmmp);
         
     }
 
@@ -42,21 +45,34 @@ public class FRM_MenuPrincipal extends javax.swing.JFrame {
         jMenuBar_Principal = new javax.swing.JMenuBar();
         jM_Archivo = new javax.swing.JMenu();
         jM_Mantenimiento = new javax.swing.JMenu();
-        jMenuItem_Estudiantes = new javax.swing.JMenuItem();
+        jMenuItem_Estudiante = new javax.swing.JMenuItem();
+        jMenuItem_Curso = new javax.swing.JMenuItem();
+        jMenu_Matricula = new javax.swing.JMenu();
+        jMenuItem_Matricula = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jM_Archivo.setText("Archivo");
-        jM_Archivo.setActionCommand("Archivo");
         jMenuBar_Principal.add(jM_Archivo);
 
         jM_Mantenimiento.setText("Mantenimiento");
 
-        jMenuItem_Estudiantes.setText("Mantenimiento Estudiantes");
-        jMenuItem_Estudiantes.setActionCommand("Estudiantes");
-        jM_Mantenimiento.add(jMenuItem_Estudiantes);
+        jMenuItem_Estudiante.setText("Mantenimiento Estudiantes");
+        jMenuItem_Estudiante.setActionCommand("Mantenimiento Estudiante");
+        jM_Mantenimiento.add(jMenuItem_Estudiante);
+
+        jMenuItem_Curso.setText("Mantenimiento Curso");
+        jM_Mantenimiento.add(jMenuItem_Curso);
 
         jMenuBar_Principal.add(jM_Mantenimiento);
+
+        jMenu_Matricula.setText("Matrícula");
+
+        jMenuItem_Matricula.setText("Matrícula");
+        jMenuItem_Matricula.setActionCommand("Matricula");
+        jMenu_Matricula.add(jMenuItem_Matricula);
+
+        jMenuBar_Principal.add(jMenu_Matricula);
 
         setJMenuBar(jMenuBar_Principal);
 
@@ -113,6 +129,9 @@ public class FRM_MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jM_Archivo;
     private javax.swing.JMenu jM_Mantenimiento;
     private javax.swing.JMenuBar jMenuBar_Principal;
-    private javax.swing.JMenuItem jMenuItem_Estudiantes;
+    private javax.swing.JMenuItem jMenuItem_Curso;
+    private javax.swing.JMenuItem jMenuItem_Estudiante;
+    private javax.swing.JMenuItem jMenuItem_Matricula;
+    private javax.swing.JMenu jMenu_Matricula;
     // End of variables declaration//GEN-END:variables
 }

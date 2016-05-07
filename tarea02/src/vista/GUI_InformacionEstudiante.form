@@ -20,14 +20,14 @@
               <EmptySpace pref="14" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jL_Direccion" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jL_Cedula" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jL_Nombre" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jT_Nombre" alignment="1" pref="300" max="32767" attributes="0"/>
                   <Component id="jT_Direccion" alignment="1" max="32767" attributes="0"/>
-                  <Component id="jT_Carne" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Component id="jT_Cedula" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -38,8 +38,8 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jT_Carne" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jT_Cedula" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jL_Cedula" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -62,13 +62,13 @@
         <Property name="text" type="java.lang.String" value="NOMBRE"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jT_Carne">
+    <Component class="javax.swing.JTextField" name="jT_Cedula">
     </Component>
     <Component class="javax.swing.JTextField" name="jT_Nombre">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="jL_Cedula">
       <Properties>
-        <Property name="text" type="java.lang.String" value="CARNE"/>
+        <Property name="text" type="java.lang.String" value="CEDULA"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jT_Direccion">

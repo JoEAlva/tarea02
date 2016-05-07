@@ -6,6 +6,7 @@
 package vista;
 
 import controlador.Controlador_FRM_MantenimientoEstudiantes;
+import modelo.MetodosConexionBD;
 
 /**
  *
@@ -15,12 +16,41 @@ public class FRM_MantenimientoEstudiantes extends javax.swing.JFrame {
 
     //Referencias
     Controlador_FRM_MantenimientoEstudiantes cfrmme;
+    MetodosConexionBD mcbd;
     
-    public FRM_MantenimientoEstudiantes() {
+    public FRM_MantenimientoEstudiantes(MetodosConexionBD mcbd) {
         initComponents();
         //Instancias
-        cfrmme = new Controlador_FRM_MantenimientoEstudiantes(this);
-        this.gUI_Botones1.agregarEventos(cfrmme);
+        this.mcbd = mcbd;
+        cfrmme = new Controlador_FRM_MantenimientoEstudiantes(this, this.mcbd);
+        this.gUI_Botones1.agregarEventosEstudiate(cfrmme);
+    }
+    
+    /*
+    
+    */
+    public String[] obtenerInformacion() {
+        
+        return this.gUI_InformacionEstudiante1.obtenerInformacion();
+        
+    }//Fin obtenerInforacion
+    
+    /*
+    
+    */
+    public void mostrarInformacion(String arregloInformacion[]) {
+        
+        this.gUI_InformacionEstudiante1.mostrarInformacion(arregloInformacion);
+        
+    }//Fin mostrarInformacion
+    
+    /*
+    
+    */
+    public void limpiarCampos() {
+        
+        this.gUI_InformacionEstudiante1.limpiarCampos();
+        
     }
 
     /**
@@ -33,28 +63,26 @@ public class FRM_MantenimientoEstudiantes extends javax.swing.JFrame {
     private void initComponents() {
 
         gUI_Botones1 = new vista.GUI_Botones();
-        gUI_InformacionEstudiante2 = new vista.GUI_InformacionEstudiante();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        gUI_InformacionEstudiante1 = new vista.GUI_InformacionEstudiante();
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(gUI_InformacionEstudiante2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(gUI_Botones1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(gUI_InformacionEstudiante1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(gUI_InformacionEstudiante2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(gUI_InformacionEstudiante1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(gUI_Botones1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(12, Short.MAX_VALUE))
@@ -69,6 +97,6 @@ public class FRM_MantenimientoEstudiantes extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private vista.GUI_Botones gUI_Botones1;
-    private vista.GUI_InformacionEstudiante gUI_InformacionEstudiante2;
+    private vista.GUI_InformacionEstudiante gUI_InformacionEstudiante1;
     // End of variables declaration//GEN-END:variables
 }

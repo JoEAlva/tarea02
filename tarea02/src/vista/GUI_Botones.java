@@ -5,7 +5,9 @@
  */
 package vista;
 
+import controlador.Controlador_FRM_MantenimientoCursos;
 import controlador.Controlador_FRM_MantenimientoEstudiantes;
+import controlador.Controlador_FRM_Matricula;
 
 /**
  *
@@ -15,6 +17,8 @@ public class GUI_Botones extends javax.swing.JPanel {
 
     //Referencias
     Controlador_FRM_MantenimientoEstudiantes cfrmme;
+    Controlador_FRM_MantenimientoCursos cfrmmc;
+    Controlador_FRM_Matricula cfrmm;
     
     //Constructor
     public GUI_Botones() {
@@ -22,7 +26,10 @@ public class GUI_Botones extends javax.swing.JPanel {
         //Instancias
     }
     
-    public void agregarEventos(Controlador_FRM_MantenimientoEstudiantes cfrmme) {
+    /*
+    
+    */
+    public void agregarEventosEstudiate(Controlador_FRM_MantenimientoEstudiantes cfrmme) {
         
         this.cfrmme = cfrmme;
         this.jB_Consultar.addActionListener(cfrmme);
@@ -31,6 +38,35 @@ public class GUI_Botones extends javax.swing.JPanel {
         this.jB_Eliminar.addActionListener(cfrmme);
         
     }//Fin agregarEventos
+    
+    /*
+    
+    */
+    public void agregarEventosCurso(Controlador_FRM_MantenimientoCursos cfrmmc) {
+        
+        this.cfrmmc = cfrmmc;
+        this.jB_Consultar.addActionListener(cfrmmc);
+        this.jB_Agregar.addActionListener(cfrmmc);
+        this.jB_Modificar.addActionListener(cfrmmc);
+        this.jB_Eliminar.addActionListener(cfrmmc);
+        
+    }//Fin agregarEventosCurso
+    
+    /*
+    
+    */
+    public void agregarEventosMatricula(Controlador_FRM_Matricula cfrmm) {
+        
+        this.cfrmm = cfrmm;
+        this.jB_Consultar.addActionListener(cfrmm);
+        this.jB_Agregar.addActionListener(cfrmm);
+        this.jB_Modificar.addActionListener(cfrmm);
+        this.jB_Eliminar.addActionListener(cfrmm);
+        
+    }//agregarEventosMatricula
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

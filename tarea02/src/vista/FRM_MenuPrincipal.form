@@ -7,7 +7,6 @@
         <Menu class="javax.swing.JMenu" name="jM_Archivo">
           <Properties>
             <Property name="text" type="java.lang.String" value="Archivo"/>
-            <Property name="actionCommand" type="java.lang.String" value="Archivo"/>
           </Properties>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jM_Mantenimiento">
@@ -15,10 +14,28 @@
             <Property name="text" type="java.lang.String" value="Mantenimiento"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem_Estudiantes">
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem_Estudiante">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Mantenimiento Estudiantes"/>
-                <Property name="actionCommand" type="java.lang.String" value="Estudiantes"/>
+                <Property name="actionCommand" type="java.lang.String" value="Mantenimiento Estudiante"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem_Curso">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Mantenimiento Curso"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jMenu_Matricula">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Matr&#xed;cula"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem_Matricula">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Matr&#xed;cula"/>
+                <Property name="actionCommand" type="java.lang.String" value="Matricula"/>
               </Properties>
             </MenuItem>
           </SubComponents>
