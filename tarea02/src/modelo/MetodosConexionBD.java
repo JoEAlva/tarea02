@@ -19,7 +19,11 @@ public class MetodosConexionBD {
     
     //Referencias
     Connection con = null;
-    public String arregloInformacion[];
+    public String infoEst[];
+    public String infoCurso[];
+    public String nombreCurso;
+    public String nombreEst;
+    
     String nombre = "";
     String direccion = "";
             
@@ -28,7 +32,8 @@ public class MetodosConexionBD {
     //Constructor
     public MetodosConexionBD() {
                 
-        arregloInformacion = new String[2];
+        infoEst = new String[2];
+        infoCurso = new String[3];
         
     }//Fin constructor
     
@@ -130,6 +135,7 @@ public class MetodosConexionBD {
         
         ResultSet rs = null;
         Statement cmd = null;
+        String info[] = new String[2];
 
         try {
                 cmd = con.createStatement();
@@ -137,34 +143,31 @@ public class MetodosConexionBD {
                 
                 while (rs.next()) 
                 {
-                    nombre = rs.getString("nombre");
-                    direccion = rs.getString("direccion");
+                    info[0] = rs.getString("nombre");
+                    info[1] = rs.getString("direccion");
                     //int edad = rs.getInt(2);
-                    System.out.println("Información de la BD: "+nombre+" "+direccion);
+                    this.infoEst = info;
                     
-                    
-                    //System.out.println(""+direccion);
                 }
+                
                 rs.close();
-                arregloInformacion[0] = " Aquí debería ir el nombre "+nombre;
-                arregloInformacion[1] = "Aquí debería ir la dirección "+direccion;
-                System.out.println("Método devolver arreglo "+arregloInformacion[0]+" "+arregloInformacion[1]);
+                
         }
         catch(Exception e)
         {
             System.out.println("SQLException ejecutando sentencia: " + e.getMessage());
         }
        
-        
     }//Fin consultarEmpleado
 
     /*
     Retorna el arreglo con la información del estudiante
     */
-    public String[] devolverArreglo() {
-        System.out.println("Método devolver arreglo "+arregloInformacion[0]+" "+arregloInformacion[1]);
-        return this.arregloInformacion;
-    }
+    public String[] devolverArregloEst() {
+        
+        return this.infoEst;
+        
+    }//Fin devolverArregloInformacion
 
     /*
     Registra un estudiante en la base de datos
@@ -241,6 +244,7 @@ public class MetodosConexionBD {
         
         ResultSet rs = null;
         Statement cmd = null;
+        String info[] = new String[4];
 
         try {
                 cmd = con.createStatement();
@@ -248,13 +252,13 @@ public class MetodosConexionBD {
                 
                 while (rs.next()) 
                 {
-                    String sigla = rs.getString("sigla");
-                    String nombreCurso = rs.getString("nombre");
-                    String creditos = rs.getString("creditos");
-                    String horario = rs.getString("horario");
+                    
+                    info[0] = rs.getString("nombre");
+                    info[1] = ""+rs.getInt("creditos");
+                    info[2] = rs.getString("horario");
                     //int edad = rs.getInt(2);
-                    System.out.println("Información de la BD: "+sigla+" "+nombreCurso+" "+creditos+" "+" "+horario);
-                   
+                    this.infoCurso = info;
+                    
                 }
                 rs.close();
         }
@@ -264,6 +268,15 @@ public class MetodosConexionBD {
         }
         
     }//Fin consultarEmpleado
+    
+    /*
+    
+    */
+    public String[] devolverArregloCurso() {
+        
+        return this.infoCurso;
+        
+    }//Fin devolverArregloCurso
     
     /*
     
@@ -279,11 +292,10 @@ public class MetodosConexionBD {
                 
                 while (rs.next()) 
                 {
-                    String siglaTemp = rs.getString("sigla");
+                   
                     String nombreCurso = rs.getString("nombre");
-                    
+                    this.nombreCurso = nombreCurso;
                     //int edad = rs.getInt(2);
-                    System.out.println("Información de la BD: "+sigla+" "+nombreCurso);
                    
                 }
                 rs.close();
@@ -294,6 +306,15 @@ public class MetodosConexionBD {
         }
         
     }//Fin consultarCursoMatricula
+    
+    /*
+    
+    */
+    public String devolverNombreCurso() {
+        
+        return this.nombreCurso;
+        
+    }//Fin devolverNombreCurso
     
     /*
     
@@ -309,10 +330,9 @@ public class MetodosConexionBD {
                 
                 while (rs.next()) 
                 {
-                    String cedulaTemp = rs.getString("cedula");
-                    String nombreEst = rs.getString("nombre");
                     
-                    //int edad = rs.getInt(2);
+                    String nombreEst = rs.getString("nombre");
+                    this.nombreEst = nombreEst;
                     System.out.println("Información de la BD: "+cedula+" "+nombreEst);
                    
                 }
@@ -326,13 +346,23 @@ public class MetodosConexionBD {
     }//Fin consultarEstudianteMatricula
     
     /*
+    
+    */
+    public String devolverNombreEst() {
+        
+        return this.nombreEst;
+        
+    }//Fin devolverNombreEst
+    
+    /*
     Registra un estudiante en la base de datos
      */
     
     /*
-    Aquí quedé
+    
     */
     public boolean registrarMatricula(String arregloInformacion[]) {
+        
         ResultSet rs = null;
         Statement cmd = null;
         boolean ejecutar;
@@ -349,7 +379,32 @@ public class MetodosConexionBD {
             System.out.println("SQLException ejecutando sentencia: " + e.getMessage());
             return false;
         }
+        
     } //Fin registrarEmpleado
+    
+    /*
+    
+    */
+    public boolean registrarDetalleMatricula(String arregloInformacion[]) {
+        
+        ResultSet rs = null;
+        Statement cmd = null;
+        boolean ejecutar;
+        
+        try {
+            cmd = con.createStatement();
+            ejecutar = cmd.execute("INSERT INTO detalle_matricula(cedula, nombreEstudiante, sigla, nombreCurso) VALUES ('"+arregloInformacion[0]+"','"+arregloInformacion[1]+"','"+arregloInformacion[2]+"','"+arregloInformacion[3]+"')");
+            
+            return true;
+            // rs.close();
+        }
+        catch(Exception e)
+        {
+            System.out.println("SQLException ejecutando sentencia: " + e.getMessage());
+            return false;
+        }
+        
+    }//Fin registrarDetalleMatricula
     
     
     

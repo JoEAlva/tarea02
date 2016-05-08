@@ -32,14 +32,18 @@ public class Controlador_FRM_Matricula implements ActionListener{
     {
         if(e.getActionCommand().equals("ConsultarEst"))
         {
+            
             System.out.println("ConsultarEst");
             mcbd.consultarEstudianteMatricula(frm_Matricula.devolverCedula());
+            frm_Matricula.mostrarNombreEstudiante(mcbd.devolverNombreEst());
+            
         }
         
         if(e.getActionCommand().equals("ConsultarCurso"))
         {
             System.out.println("ConsultaRapidaCurso");
             mcbd.consultarCursoMatricula(frm_Matricula.devolverSigla());
+            frm_Matricula.mostrarNombreCurso(mcbd.devolverNombreCurso());
         }
         
         if(e.getActionCommand().equals("Agregar"))

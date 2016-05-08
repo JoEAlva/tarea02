@@ -34,13 +34,7 @@ public class Controlador_FRM_MantenimientoEstudiantes implements ActionListener 
         if(e.getActionCommand().equals("CONSULTAR")) {
             System.out.println("C");
             mcbd.consultarEstudiante(frmme.obtenerInformacion());
-            /*
-            Aquí le paso por parámetro al método el arreglo
-            */
-//            String arreglo[] = new String[2];
-//            arreglo[0] = "Hola";
-//            arreglo[1] = "mundo";
-              frmme.mostrarInformacion(mcbd.devolverArreglo());
+            frmme.mostrarInformacion(mcbd.devolverArregloEst());
             
         }
         

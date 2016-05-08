@@ -37,6 +37,15 @@ public class FRM_MantenimientoCursos extends javax.swing.JFrame {
     /*
     
     */
+    public void mostrarInformacion(String arregloInformacion[]) {
+        
+        this.gUI_InformacionCurso2.mostrarInformacion(arregloInformacion);
+        
+    }//Fin mostrarInformacion
+    
+    /*
+    
+    */
     public void limpiarCampos() {
         
         this.gUI_InformacionCurso2.limpiarCampos();

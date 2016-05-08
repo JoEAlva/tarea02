@@ -33,7 +33,7 @@ public class Controlador_FRM_MantenimientoCursos implements ActionListener {
             
             System.out.println("C");
             mcbd.consultarCurso(frmmc.devolverInformacion());
-            
+            frmmc.mostrarInformacion(mcbd.devolverArregloCurso());
             
         }
         
