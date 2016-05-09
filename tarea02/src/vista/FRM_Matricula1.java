@@ -112,6 +112,18 @@ public class FRM_Matricula1 extends javax.swing.JFrame {
         
         return arreglo;
     }
+    
+    public String[] getInfoCompletaTabla(int contador) {
+        String arreglo[] = new String[4];
+        arreglo[0] = ""+this.modelo.getValueAt(contador, 0);
+        arreglo[1] = ""+this.modelo.getValueAt(contador, 1);
+        arreglo[2] = ""+this.modelo.getValueAt(contador, 2);
+        arreglo[3] = ""+this.modelo.getValueAt(contador, 3);
+        
+        return arreglo;
+        
+    }
+    
     public void resetearInterfaz()
     {
 //        colocarCodigo();

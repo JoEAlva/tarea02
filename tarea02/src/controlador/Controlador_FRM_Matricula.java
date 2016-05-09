@@ -51,6 +51,11 @@ public class Controlador_FRM_Matricula implements ActionListener{
         if(e.getActionCommand().equals("AGREGAR"))
         {  
             frm_Matricula.cargarTabla();
+            for(int contador=0;contador<frm_Matricula.getCantidadDeCursosMatriculados();contador++)
+            {
+                mcbd.registrarDetalleMatricula(frm_Matricula.getInfoCompletaTabla(contador));
+
+            }
             encontroCurso=false;
             frm_Matricula.estadoInicial();
             frm_Matricula.limpiarCurso(); 

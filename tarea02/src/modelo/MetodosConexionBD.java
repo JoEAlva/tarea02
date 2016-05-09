@@ -395,7 +395,7 @@ public class MetodosConexionBD {
         
         try {
             cmd = con.createStatement();
-            ejecutar = cmd.execute("INSERT INTO detalle_matricula(cedula, nombreEstudiante, sigla, nombreCurso) VALUES ('"+arregloInformacion[0]+"','"+arregloInformacion[1]+"','"+arregloInformacion[2]+"','"+arregloInformacion[3]+"')");
+            ejecutar = cmd.execute("INSERT INTO detalle_matricula(cedula, nombreEstudiate, sigla, nombreCurso) VALUES ('"+arregloInformacion[0]+"','"+arregloInformacion[1]+"','"+arregloInformacion[2]+"','"+arregloInformacion[3]+"')");
             
             return true;
             // rs.close();
