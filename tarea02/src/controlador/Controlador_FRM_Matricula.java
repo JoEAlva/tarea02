@@ -26,6 +26,7 @@ public class Controlador_FRM_Matricula implements ActionListener{
     {
         this.mcbd = mcbd;
         this.frm_Matricula=frm_Matricula;
+
     }
     
     public void actionPerformed(ActionEvent e)
@@ -37,6 +38,7 @@ public class Controlador_FRM_Matricula implements ActionListener{
             mcbd.consultarEstudianteMatricula(frm_Matricula.devolverCedula());
             frm_Matricula.mostrarNombreEstudiante(mcbd.devolverNombreEst());
             
+            
         }
         
         if(e.getActionCommand().equals("ConsultarCurso"))
@@ -46,7 +48,7 @@ public class Controlador_FRM_Matricula implements ActionListener{
             frm_Matricula.mostrarNombreCurso(mcbd.devolverNombreCurso());
         }
         
-        if(e.getActionCommand().equals("Agregar"))
+        if(e.getActionCommand().equals("AGREGAR"))
         {  
             frm_Matricula.cargarTabla();
             encontroCurso=false;
@@ -54,11 +56,12 @@ public class Controlador_FRM_Matricula implements ActionListener{
             frm_Matricula.limpiarCurso(); 
         }
         
-        if(e.getActionCommand().equals("Finalizar"))
+        if(e.getActionCommand().equals("FINALIZAR"))
         {  
             for(int contador=0;contador<frm_Matricula.getCantidadDeCursosMatriculados();contador++)
             {
-//               metodosMatricula.agregarMatricula(frm_Matricula.getInformacionTabla(contador));
+                mcbd.registrarMatricula(frm_Matricula.getInformacionTabla(contador));
+
             }
             frm_Matricula.resetearInterfaz();
                         

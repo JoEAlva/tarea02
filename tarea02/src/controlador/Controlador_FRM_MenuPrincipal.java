@@ -52,8 +52,11 @@ public class Controlador_FRM_MenuPrincipal implements ActionListener {
         
         if(e.getActionCommand().equals("Matricula")) {
             
-            frmm.setVisible(true);
             
+            frmm.setVisible(true);
+            mcbd.contarNumeroFilasMatricula();
+            
+            frmm.mostrarCodigoMatricula(""+mcbd.generarCodigo());
         }
         
     }//Fin actionPerformed

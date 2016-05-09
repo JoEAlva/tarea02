@@ -23,6 +23,7 @@ public class MetodosConexionBD {
     public String infoCurso[];
     public String nombreCurso;
     public String nombreEst;
+    public int numeroFila = 0;
     
     String nombre = "";
     String direccion = "";
@@ -333,7 +334,7 @@ public class MetodosConexionBD {
                     
                     String nombreEst = rs.getString("nombre");
                     this.nombreEst = nombreEst;
-                    System.out.println("Información de la BD: "+cedula+" "+nombreEst);
+                    
                    
                 }
                 rs.close();
@@ -366,10 +367,11 @@ public class MetodosConexionBD {
         ResultSet rs = null;
         Statement cmd = null;
         boolean ejecutar;
+        String arregloInfoMatricula[] = new String[3];
         
         try {
             cmd = con.createStatement();
-            ejecutar = cmd.execute("INSERT INTO matricula(cedula, sigla) VALUES ('"+arregloInformacion[0]+"','"+arregloInformacion[1]+"')");
+            ejecutar = cmd.execute("INSERT INTO matricula(codigo, cedula, sigla) VALUES ('"+arregloInformacion[0]+"','"+arregloInformacion[1]+"','"+arregloInformacion[2]+"')");
             
             return true;
             // rs.close();
@@ -406,6 +408,45 @@ public class MetodosConexionBD {
         
     }//Fin registrarDetalleMatricula
     
+    public void contarNumeroFilasMatricula() {
+        
+        ResultSet rs = null;
+        Statement cmd = null;
+
+        try {
+                cmd = con.createStatement();
+                rs = cmd.executeQuery("SELECT COUNT(*) AS total FROM matricula ");
+                
+                while (rs.next()) 
+                {
+                    
+                    int totalFilas = rs.getInt("total");
+                    this.numeroFila = totalFilas+1;
+                    System.out.println(" "+totalFilas);
+                    System.out.println("Pasó por aquí");
+                    
+                   
+                }
+                rs.close();
+        }
+        catch(Exception e)
+        {
+            System.out.println("SQLException ejecutando sentencia: contarFilas" + e.getMessage());
+        }
+        
+    }//Fin consultarEstudianteMatricula
     
+    public int generarCodigo() {
+        return this.numeroFila;
+    }
+    
+    /*
+    Devuele un número entero que representa un código
+    */
+    public String devolverCodigoMatricula() {
+        
+        return ""+this.numeroFila;
+        
+    }
     
 }//Fin MetodoConexionBD

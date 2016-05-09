@@ -171,7 +171,7 @@
     <Component class="javax.swing.JButton" name="btn_Finalizar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Finalizar Matr&#xed;cula"/>
-        <Property name="actionCommand" type="java.lang.String" value="Finalizar"/>
+        <Property name="actionCommand" type="java.lang.String" value="FINALIZAR"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButton_ConsultarEst">

@@ -76,6 +76,10 @@ public class FRM_Matricula1 extends javax.swing.JFrame {
     {
         this.jt_NombreCurso.setText(nombre);
     }
+    public void mostrarCodigoMatricula(String codigo)
+    {
+        this.jt_CodigoMatricula.setText(codigo);
+    }
     public void mostrarMensaje(String mensaje)
     {
         JOptionPane.showMessageDialog(null, mensaje);
@@ -85,7 +89,7 @@ public class FRM_Matricula1 extends javax.swing.JFrame {
         this.jButton_ConsultarEst.addActionListener(controlador);
         this.jButton_ConsultarCurso.addActionListener(controlador);
         this.btn_Finalizar.addActionListener(controlador);
-//        this.gUI_Botones2.agregarEventos(controlador);
+
     }
     public int getCantidadDeCursosMatriculados()
     {
@@ -193,7 +197,7 @@ public class FRM_Matricula1 extends javax.swing.JFrame {
         jl_CodigoMatricula.setText("Código");
 
         btn_Finalizar.setText("Finalizar Matrícula");
-        btn_Finalizar.setActionCommand("Finalizar");
+        btn_Finalizar.setActionCommand("FINALIZAR");
 
         jButton_ConsultarEst.setText("Consultar");
         jButton_ConsultarEst.setActionCommand("ConsultarEst");
